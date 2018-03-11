@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creighton_Model_App", "Creighton_Model_App\Creighton_Model_App.csproj", "{0161F95E-ED8F-47A6-996B-1222AD80A8DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0161F95E-ED8F-47A6-996B-1222AD80A8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0161F95E-ED8F-47A6-996B-1222AD80A8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0161F95E-ED8F-47A6-996B-1222AD80A8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0161F95E-ED8F-47A6-996B-1222AD80A8DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0456172-5224-4368-A485-3B67A58A4698}
+	EndGlobalSection
+EndGlobal
