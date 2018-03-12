@@ -34,5 +34,14 @@ namespace Creighton_Model_App.Models.AccountViewModels
         [StringLength(55, ErrorMessage = "Sorry, too long")]
         public string LastName { get; set; }
 
+        [Required]
+        [Display(Name = "Address")]
+        [StringLength(55, ErrorMessage = "Please enter your street, city, state and zip")]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name = "Doctor Name")]
+        [StringLength(55, ErrorMessage = "Please enter your Doctor's name")]
+        public string DoctorName { get; set; }
     }
 }
