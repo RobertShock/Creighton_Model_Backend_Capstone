@@ -27,19 +27,10 @@ namespace Creighton_Model_App.Models
         public string Address { get; set; }
 
         [Required]
-        [Display(Name = "Email Address")]
-        [StringLength(55, ErrorMessage = "Please enter a valid email address")]
-        public string EmailAddress { get; set; }
-
-        [Required]
-        [Display(Name = "Phone Number")]
-        [StringLength(55, ErrorMessage = "Please enter a valid phone number")]
-        public string PhoneNumber { get; set; }
-
-        [Required]
         [Display(Name = "Doctor Name")]
         [StringLength(55, ErrorMessage = "Please enter your Doctor's name")]
         public string DoctorName { get; set; }
 
+        public virtual ICollection<Chart> Charts { get; set; }
     }
 }

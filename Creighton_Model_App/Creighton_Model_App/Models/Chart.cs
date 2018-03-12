@@ -15,9 +15,11 @@ namespace Creighton_Model_App.Models
         DateTime DateTimeCreated { get; set; }
 
         [Required]
-        DateTime CurrentDate { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
-        public virtual ICollection<ApplicationUser> ApplicationUser { get; set; }
+        public virtual ICollection<Sticker> Stickers { get; set; }
+
+        public virtual ICollection<Description> Descriptions { get; set; }
 
     }
 }

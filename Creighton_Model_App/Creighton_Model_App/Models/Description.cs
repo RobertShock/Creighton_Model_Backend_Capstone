@@ -12,11 +12,14 @@ namespace Creighton_Model_App.Models
         public int DescriptionId { get; set; }
 
         [Required]
-        public string Description { get; set; }
+        public string Observation { get; set; }
 
-        public virtual ICollection<Chart> Charts { get; set; }
+        [Required]
+        DateTime CurrentDate { get; set; }
 
-        public virtual ICollection<ApplicationUser> ApplicationUser { get; set; }
+        [Required]
+        public virtual Chart Chart { get; set; }
+
 
 
     }
