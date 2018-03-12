@@ -14,13 +14,13 @@ namespace Creighton_Model_App.Models
         [Required]
         public string StickerColor { get; set; }
 
-        public virtual ICollection<Chart> Charts { get; set; }
+        [Required]
+        DateTime CurrentDate { get; set; }
 
-        public virtual ICollection<ApplicationUser> ApplicationUser { get; set; }
-
-
-    }
-}
+        [Required]
+        public virtual Chart Chart { get; set; }
 
     }
 }
+
+

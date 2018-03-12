@@ -22,5 +22,10 @@ namespace Creighton_Model_App.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<Chart> Charts { get; set; }
+        public DbSet<Sticker> Stickers { get; set; }
+        public DbSet<Description> Descriptions { get; set; }
+
     }
 }
