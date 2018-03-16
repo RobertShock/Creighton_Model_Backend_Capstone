@@ -3,5 +3,203 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="text-center">My Recent Observations</h2>
+    
+<div class=text-center id="dailyEntryContainer">
+    <div id="dailySticker">
+        <h3>Record Observations From Today</h3>
+        <h4>Sticker</h4>
+        @{
+            List<SelectListItem> listStickers = new List<SelectListItem>();
+            listStickers.Add(new SelectListItem
+            {
+                Text = "Green",
+                Value = "1"
+            });
+            listStickers.Add(new SelectListItem
+            {
+                Text = "Red",
+                Value = "2",
+            });
+            listStickers.Add(new SelectListItem
+            {
+                Text = "White",
+                Value = "3"
+            });
+            listStickers.Add(new SelectListItem
+            {
+                Text = "Green Baby",
+                Value = "4"
+            });
+            listStickers.Add(new SelectListItem
+            {
+                Text = "White Baby",
+                Value = "5"
+            });
+        }
 
+        @Html.DropDownList("DDl", new SelectList(listStickers, "Value", "Text"))
+    </div>
+    <div id="dailyDescription">
+        <h4>Description</h4>
+        @{
+            List<SelectListItem> listDescriptions = new List<SelectListItem>();
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Dry",
+                Value = "0"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Damp without lubrication",
+                Value = "1"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Wet without lubrication",
+                Value = "2",
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Shiny without lubrication",
+                Value = "3"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Sticky-B",
+                Value = "4"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Sticky-C",
+                Value = "5"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Sticky-C/K",
+                Value = "6"
+            }); listDescriptions.Add(new SelectListItem
+            {
+                Text = "Sticky-G",
+                Value = "7"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Sticky-K",
+                Value = "8"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Sticky-L",
+                Value = "9"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Sticky-P",
+                Value = "10"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Sticky-Y",
+                Value = "11"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Tacky-B",
+                Value = "12"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Tacky-C",
+                Value = "13"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Tacky-C/K",
+                Value = "14"
+            }); listDescriptions.Add(new SelectListItem
+            {
+                Text = "Tacky-G",
+                Value = "15"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Tacky-K",
+                Value = "16"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Tacky-L",
+                Value = "17"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Tacky-P",
+                Value = "18"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Tacky-Y",
+                Value = "19"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Stretchy-B",
+                Value = "20"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Stretchy-C",
+                Value = "21"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Stretchy-C/K",
+                Value = "22"
+            }); listDescriptions.Add(new SelectListItem
+            {
+                Text = "Stretchy-G",
+                Value = "23"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Stretchy-K",
+                Value = "24"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Stretchy-L",
+                Value = "25"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Stretchy-P",
+                Value = "26"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Stretchy-Y",
+                Value = "27"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Damp with Lubrication",
+                Value = "28"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Shiny with lubrication",
+                Value = "29"
+            });
+            listDescriptions.Add(new SelectListItem
+            {
+                Text = "Wet with lubrication",
+                Value = "30"
+            });
+        }
+
+        @Html.DropDownList("DD2", new SelectList(listDescriptions, "Value", "Text"))
+    </div>
+
+</div>
+   
