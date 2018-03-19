@@ -11,8 +11,8 @@ namespace Creighton_Model_App.Models
         [Key]
         public int ChartId { get; set; }
 
-        [Required]
-        DateTime DateTimeCreated { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime DateCreated { get; set; }
 
         [Required]
         public virtual ApplicationUser User { get; set; }
