@@ -1,11 +1,20 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "My Account";
 }
+
+<div class="text-left" id="dateRange">
+    <h4>Select a date range to view and or edit entries</h4>
+    <h5>
+        From: <input type="date" />  To: <input type="date" />    
+        <button type="submit" class="btn btn-default"><a asp-area="" asp-controller="Chart" asp-action="viewChart">View</a></button>
+    </h5>
+
+</div>
 
 <h2 class="text-center">My Recent Observations</h2>
     
-<div class=text-center id="dailyEntryContainer">
+<div class="text-center" id="dailyEntryContainer">
     <div id="dailySticker">
         <h3>Record Observations From Today</h3>
         <h4>Sticker</h4>
@@ -200,6 +209,14 @@
 
         @Html.DropDownList("DD2", new SelectList(listDescriptions, "Value", "Text"))
     </div>
-
+    <div id="dailyDate">
+        <h4>Date of Observation</h4>
+        <input type="date" />
+    </div>
+    <div id="saveButton">
+        <button type="submit" class="btn btn-default"><a asp-area="" asp-controller="Chart" asp-action="saveEntry">Save</a></button>
+    </div>
 </div>
+
+
    
