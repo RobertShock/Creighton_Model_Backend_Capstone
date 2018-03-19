@@ -30,27 +30,3 @@ namespace Creighton_Model_App.Controllers
 }
 
 
-
-
-
-
-/*using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Creighton_Model_App.Models;
-
-namespace Creighton_Model_App.Controllers
-{
-    public class ChartController : Controller
-    {
-        private ApplicationDbContext db = new ApplicationDbContext();
-
-        public IActionResult Index()
-        {
-            return View(db.Chart.ToList());
-        }
-    }
-}

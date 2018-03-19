@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creighton_Model_App", "Creighton_Model_App\Creighton_Model_App.csproj", "{0161F95E-ED8F-47A6-996B-1222AD80A8DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Creighton_Model_App", "Creighton_Model_App\Creighton_Model_App.csproj", "{0161F95E-ED8F-47A6-996B-1222AD80A8DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
