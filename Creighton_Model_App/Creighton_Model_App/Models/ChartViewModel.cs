@@ -7,7 +7,7 @@ namespace Creighton_Model_App.Models
 {
     public class ChartViewModel
     {
-        public ICollection<Chart> UserCharts { get; set; }
+        public ICollection<Chart> Chart { get; set; }
 
     }
 }

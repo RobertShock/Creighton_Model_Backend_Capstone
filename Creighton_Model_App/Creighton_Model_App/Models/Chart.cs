@@ -12,7 +12,7 @@ namespace Creighton_Model_App.Models
         public int ChartId { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime DateCreated { get; set; }
+        public DateTime DateTime { get; set; }
 
         [Required]
         public virtual ApplicationUser User { get; set; }
