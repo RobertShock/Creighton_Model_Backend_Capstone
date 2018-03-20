@@ -14,9 +14,6 @@ namespace Creighton_Model_App.Models
         [Required]
         public string Observation { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime DateCreated { get; set; }
-
-        public virtual List<Chart> Charts { get; set; }
+        public virtual List<ChartEntry> ChartEntries { get; set; }
     }
 }
