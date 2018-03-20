@@ -12,14 +12,9 @@ namespace Creighton_Model_App.Models
         public int StickerId { get; set; }
 
         [Required]
-        public string StickerColor { get; set; }
-
-        [DataType(DataType.Date)]
-        public DateTime DateCreated { get; set; }      
+        public string StickerColor { get; set; }     
         
-        public virtual List<Chart> Charts { get; set; }
-
-
+        public virtual List<ChartEntry> ChartEntries { get; set; }
     }
 }
 

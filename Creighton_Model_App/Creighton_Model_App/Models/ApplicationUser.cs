@@ -31,6 +31,6 @@ namespace Creighton_Model_App.Models
         [StringLength(55, ErrorMessage = "Please enter your Doctor's name")]
         public string DoctorName { get; set; }
 
-        public virtual ICollection<Chart> Charts { get; set; }
+        public virtual ICollection<ChartEntry> ChartEntries { get; set; }
     }
 }

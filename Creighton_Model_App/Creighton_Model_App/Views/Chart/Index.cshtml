@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Creighton_Model_App.Models.Chart>
+﻿@model IEnumerable<Creighton_Model_App.Models.ChartEntry>
 @{ 
     ViewData["Title"] = "My Chart";
 }
@@ -12,10 +12,10 @@
                 @Html.DisplayNameFor(model => model.DateCreated)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Stickers)
+                @Html.DisplayNameFor(model => model.StickerId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descriptions)
+                @Html.DisplayNameFor(model => model.DescriptionId)
             </th>
         </tr>
     </thead> 

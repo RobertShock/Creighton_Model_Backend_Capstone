@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Creighton_Model_App.Models
 {
-    public class Chart
+    public class ChartEntry
     {
         [Key]
-        public int ChartId { get; set; }
+        public int ChartEntryId { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime DateCreated { get; set; }

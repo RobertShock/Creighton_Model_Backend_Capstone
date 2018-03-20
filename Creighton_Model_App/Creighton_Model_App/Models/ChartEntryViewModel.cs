@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Creighton_Model_App.Models
 {
-    public class ChartViewModel
+    public class ChartEntryViewModel
     {
         [Required]
         public virtual ApplicationUser User { get; set; }

@@ -11,25 +11,25 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Creighton_Model_App.Controllers
 {
-    public class ChartController : Controller
+    public class ChartEntryController : Controller
     {
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public ChartController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public ChartEntryController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
             _userManager = userManager;
         }
         private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
-        public async Task<IActionResult> Track(ChartViewModel model)
+        public async Task<IActionResult> Track(ChartEntryViewModel model)
         {
             //gets the current user
             ApplicationUser user = await GetCurrentUserAsync();
 
             //add chart to database
-            Chart chart = new Chart
+            ChartEntry chart = new ChartEntry
             {
                 User = user,
                 DateCreated = model.DateCreated,
