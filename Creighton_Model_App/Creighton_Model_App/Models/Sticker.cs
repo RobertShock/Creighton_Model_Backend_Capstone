@@ -14,8 +14,8 @@ namespace Creighton_Model_App.Models
         [Required]
         public string StickerColor { get; set; }
 
-        [Required]
-        DateTime CurrentDate { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime DateCreated { get; set; }
 
         [Required]
         public virtual Chart Chart { get; set; }
