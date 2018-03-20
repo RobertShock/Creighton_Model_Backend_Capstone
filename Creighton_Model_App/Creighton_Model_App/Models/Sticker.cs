@@ -15,10 +15,10 @@ namespace Creighton_Model_App.Models
         public string StickerColor { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }      
+        
+        public virtual List<Chart> Charts { get; set; }
 
-        [Required]
-        public virtual Chart Chart { get; set; }
 
     }
 }

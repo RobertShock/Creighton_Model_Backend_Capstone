@@ -12,65 +12,40 @@ using Microsoft.AspNetCore.Identity;
 namespace Creighton_Model_App.Controllers
 {
     public class ChartController : Controller
-    {  
-        private ApplicationDbContext _context;
-        private DateTime DateTime;
-        private ICollection<Sticker> stickers;
-        private ICollection<Description> descriptions;
+    {
+        private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public ChartController(ApplicationDbContext ctx, UserManager<ApplicationUser> userManager)
+        public ChartController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
-            _context = ctx;
+            _context = context;
             _userManager = userManager;
         }
         private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
-        public async Task<IActionResult> UserChartEntries()
-        {
-            ApplicationUser user = await GetCurrentUserAsync();
-
-            var model = new ChartViewModel();
-            model.Chart = GetUserChartEntries(user);
-            return View(model);
-        }
-
-        private ICollection<Chart> GetUserChartEntries(ApplicationUser user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<IActionResult> Track(DateTime DateTime, string sticker, string description)
+        public async Task<IActionResult> Track(ChartViewModel model)
         {
             //gets the current user
             ApplicationUser user = await GetCurrentUserAsync();
 
-            //add entry to database
+            //add chart to database
             Chart chart = new Chart
             {
-                DateTime = DateTime,
-                Stickers = stickers,
-                Descriptions = descriptions
+                User = user,
+                DateCreated = model.DateCreated,
+                StickerId = model.StickerId,
+                DescriptionId = model.DescriptionId
             };
-          
+
             _context.Add(chart);
-        }
+            await _context.SaveChangesAsync();
 
-
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return RedirectToActionPermanent("saveEntry");
         }
     }
 }
+
+
 
 
 

@@ -17,10 +17,6 @@ namespace Creighton_Model_App.Models
         [DataType(DataType.Date)]
         public DateTime DateCreated { get; set; }
 
-        [Required]
-        public virtual Chart Chart { get; set; }
-
-
-
+        public virtual List<Chart> Charts { get; set; }
     }
 }

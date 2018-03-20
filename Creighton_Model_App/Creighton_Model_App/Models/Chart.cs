@@ -12,14 +12,14 @@ namespace Creighton_Model_App.Models
         public int ChartId { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime DateTime { get; set; }
+        public DateTime DateCreated { get; set; }
 
         [Required]
         public virtual ApplicationUser User { get; set; }
 
-        public virtual ICollection<Sticker> Stickers { get; set; }
+        public int StickerId { get; set; }
 
-        public virtual ICollection<Description> Descriptions { get; set; }
+        public int DescriptionId { get; set; }
 
     }
 }
