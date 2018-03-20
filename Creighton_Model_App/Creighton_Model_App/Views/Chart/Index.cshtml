@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Creighton_Model_App.Models.Chart>
+@{ 
+    ViewData["Title"] = "My Chart";
+}
+<h2>Observations From: "Placeholder" To: "Placeholder" </h2>
+<h5>Select a date to view and/or edit</h5>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stickers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descriptions)
+            </th>
+        </tr>
+    </thead> 
+</table>
+
