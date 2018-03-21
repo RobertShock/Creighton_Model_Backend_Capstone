@@ -23,7 +23,7 @@ namespace Creighton_Model_App.Controllers
         }
         private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
-        public async Task<IActionResult> Track(ChartEntryViewModel model)
+        public async Task<IActionResult> saveEntry(ChartEntryViewModel model)
         {
             //gets the current user
             ApplicationUser user = await GetCurrentUserAsync();
@@ -40,8 +40,16 @@ namespace Creighton_Model_App.Controllers
             _context.Add(chart);
             await _context.SaveChangesAsync();
 
-            return RedirectToActionPermanent("saveEntry");
+            return RedirectToAction("Index");
         }
+        public async Task<IActionResult> Index()
+        {
+            ApplicationUser user = await GetCurrentUserAsync();
+            var entries = _context.ChartsEnteries.Where(a => a.User == user);
+            return View(entries.ToList());
+        }
+
+
     }
 }
 
