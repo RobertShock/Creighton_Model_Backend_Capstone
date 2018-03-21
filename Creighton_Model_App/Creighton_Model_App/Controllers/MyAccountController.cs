@@ -7,6 +7,7 @@ using Creighton_Model_App.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Creighton_Model_App.Controllers
 {
@@ -23,6 +24,8 @@ namespace Creighton_Model_App.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewData["DescriptionId"] = new SelectList(_context.Descriptions, "DescriptionId", "Observation");
+            ViewData["StickerId"] = new SelectList(_context.Stickers, "StickerId", "StickerColor");
             var user = await _userManager.GetUserAsync(User);
             return View();
         }

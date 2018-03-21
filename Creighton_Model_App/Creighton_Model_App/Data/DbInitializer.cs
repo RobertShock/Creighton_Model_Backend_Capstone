@@ -6,38 +6,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Creighton_Model_App.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Creighton_Model_App.Models
 {
     public class DbInitializer
     {
-        public static void Seed(IApplicationBuilder applicationBuilder)
+        public static void Seed(IServiceProvider serviceProvider)
         {
-            ApplicationDbContext context =
-                applicationBuilder.ApplicationServices.GetRequiredService<ApplicationDbContext>();
+            using (var context = new ApplicationDbContext(serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
+                if (context.Descriptions.Any())
+                {
+                    return; 
+                }
                 context.AddRange
                 (
-                    new Sticker
-                    {
-                        StickerColor = "Red",
-                    },
-                    new Sticker
-                    {
-                        StickerColor = "Green",
-                    },
-                    new Sticker
-                    {
-                        StickerColor = "White",
-                    },
-                    new Sticker
-                    {
-                        StickerColor = "Yellow Baby",
-                    },
-                    new Sticker
-                    {
-                        StickerColor = "Green Baby",
-                    },
                     new Description
                     {
                         Observation = "Dry",
