@@ -23,7 +23,7 @@ namespace Creighton_Model_App.Data
             // Add your customizations after calling base.OnModelCreating(builder);
         }
 
-        public DbSet<ChartEntry> Charts { get; set; }
+        public DbSet<ChartEntry> ChartsEnteries { get; set; }
         public DbSet<Sticker> Stickers { get; set; }
         public DbSet<Description> Descriptions { get; set; }
 
