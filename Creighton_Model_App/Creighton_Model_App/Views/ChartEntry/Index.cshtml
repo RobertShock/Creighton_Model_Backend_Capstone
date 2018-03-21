@@ -17,20 +17,22 @@
             <th>
                 @Html.DisplayNameFor(model => model.DescriptionId)
             </th>
-
-            @foreach (var enteries in Model)
-            {
-            <td>
-                @Html.DisplayFor(modelEntries => enteries.DateCreated)
-            </td>
-            <td>
-                @Html.DisplayFor(modelEntries => enteries.StickerId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelEntries => enteries.DescriptionId)
-            </td>  
-            }
         </tr>
-    </thead> 
+    </thead>
+    @foreach (var enteries in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelEntries => enteries.DateCreated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelEntries => enteries.StickerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelEntries => enteries.DescriptionId)
+        </td>
+    </tr>
+    }
+
 </table>
 

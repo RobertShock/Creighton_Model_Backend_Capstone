@@ -11,9 +11,10 @@ using System;
 namespace Creighton_Model_App.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180321163617_displayChart")]
+    partial class displayChart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,7 +110,7 @@ namespace Creighton_Model_App.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ChartEnteries");
+                    b.ToTable("ChartsEnteries");
                 });
 
             modelBuilder.Entity("Creighton_Model_App.Models.Description", b =>
