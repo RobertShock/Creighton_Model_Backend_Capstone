@@ -21,13 +21,17 @@ namespace Creighton_Model_App.Controllers
             _context = context;
             _userManager = userManager;
         }
+
         private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
+
+
+        [HttpPost]
         public async Task<IActionResult> Track(ChartEntryViewModel model)
         {
             //gets the current user
             ApplicationUser user = await GetCurrentUserAsync();
-
+                     
             //add chart to database
             ChartEntry chart = new ChartEntry
             {
@@ -41,6 +45,7 @@ namespace Creighton_Model_App.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToActionPermanent("saveEntry");
+
         }
     }
 }
