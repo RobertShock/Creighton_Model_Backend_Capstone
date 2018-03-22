@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Creighton_Model_App.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Creighton_Model_App.Controllers
 {
@@ -50,6 +51,55 @@ namespace Creighton_Model_App.Controllers
             return View(entries.ToList());
         }
 
+        // GET: Continent/Edit/5
+        public async Task<IActionResult> Edit(int Id)
+        {
+            ApplicationUser user = await GetCurrentUserAsync();
+            ViewData["DescriptionId"] = new SelectList(_context.Descriptions.OrderBy(description => description.Observation), "DescriptionId", "Observation");
+            ViewData["StickerId"] = new SelectList(_context.Stickers, "StickerId", "StickerColor");
+
+            var entries = await _context.ChartEnteries.SingleOrDefaultAsync(a => a.ChartEntryId == Id);
+            if (entries == null)
+            {
+                return NotFound();
+            }
+            return View(entries);
+        }
+
+        // POST: Continent/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, ChartEntry chartEntry)
+        {
+            if (id != chartEntry.ChartEntryId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(chartEntry);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (id != chartEntry.ChartEntryId)
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction("Index");
+            }
+            return View(chartEntry);
+        }
 
     }
 }
