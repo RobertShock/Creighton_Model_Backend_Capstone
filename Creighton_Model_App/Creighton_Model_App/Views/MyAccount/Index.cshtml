@@ -1,22 +1,12 @@
 ﻿@model ChartEntryViewModel; 
 @{
-    ViewData["Title"] = "My Account";
+    ViewData["Title"] = "Fertility Tracker";
 }
 
-<div class="text-left" id="dateRange">
-    <h4>Select a date range to view and or edit entries</h4>
-    <h5>
-        From: <input type="date" />  To: <input type="date" />
-        <button type="submit" class="btn btn-default"><a asp-area="" asp-controller="Chart">View</a></button>
-    </h5>
-
-</div>
-
-<h2 class="text-center">My Recent Observations</h2>
 <form asp-controller="ChartEntry" asp-action="saveEntry">
     <div class="text-center" id="dailyEntryContainer">
         <div id="dailySticker">
-            <h3>Record Observations From Today</h3>
+            <h2>Record Observations From Today</h2>
             <h4>Sticker</h4>
             <select asp-for="StickerId" class="form-control" asp-items="ViewBag.StickerId"></select>
         </div>
@@ -30,8 +20,9 @@
             <h4>Date of Observation</h4>
             <input type="date" asp-for="DateCreated" />
         </div>
+        <br />
         <div id="saveButton">
-            <button type="submit" class="btn btn-default">Save</button>
+            <button type="submit" class="btn btn-success">Save</button>
         </div>
 
     </div>
