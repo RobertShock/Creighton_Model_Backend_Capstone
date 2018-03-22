@@ -8,13 +8,12 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace Creighton_Model_App.Data.Migrations
+namespace Creighton_Model_App.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180321163617_displayChart")]
-    partial class displayChart
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,7 +109,7 @@ namespace Creighton_Model_App.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ChartsEnteries");
+                    b.ToTable("ChartEnteries");
                 });
 
             modelBuilder.Entity("Creighton_Model_App.Models.Description", b =>
@@ -249,12 +248,12 @@ namespace Creighton_Model_App.Data.Migrations
 
             modelBuilder.Entity("Creighton_Model_App.Models.ChartEntry", b =>
                 {
-                    b.HasOne("Creighton_Model_App.Models.Description")
+                    b.HasOne("Creighton_Model_App.Models.Description", "description")
                         .WithMany("ChartEntries")
                         .HasForeignKey("DescriptionId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Creighton_Model_App.Models.Sticker")
+                    b.HasOne("Creighton_Model_App.Models.Sticker", "sticker")
                         .WithMany("ChartEntries")
                         .HasForeignKey("StickerId")
                         .OnDelete(DeleteBehavior.Cascade);

@@ -7,7 +7,7 @@ using Creighton_Model_App.Data;
 using Microsoft.AspNetCore.Mvc;
 using Creighton_Model_App.Models;
 using Microsoft.AspNetCore.Identity;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Creighton_Model_App.Controllers
 {
@@ -24,7 +24,7 @@ namespace Creighton_Model_App.Controllers
         private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
         [HttpPost]
-        public async Task<IActionResult> saveEntry(ChartEntryViewModel model)
+        public async Task<IActionResult> saveEntry(ChartEntry model)
         {
             //gets the current user
             ApplicationUser user = await GetCurrentUserAsync();
@@ -46,7 +46,7 @@ namespace Creighton_Model_App.Controllers
         public async Task<IActionResult> Index()
         {
             ApplicationUser user = await GetCurrentUserAsync();
-            var entries = _context.ChartEnteries.Where(a => a.User == user);
+            var entries = _context.ChartEnteries.Include("sticker").Include("description").Where(a => a.User == user).OrderBy(date => date.DateCreated);
             return View(entries.ToList());
         }
 

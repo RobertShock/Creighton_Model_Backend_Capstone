@@ -22,6 +22,26 @@ namespace Creighton_Model_App.Models
                 }
                 context.AddRange
                 (
+                    new Sticker
+                    {
+                        StickerColor = "Green",
+                    },
+                    new Sticker
+                    {
+                        StickerColor = "White",
+                    }, 
+                    new Sticker
+                    {
+                        StickerColor = "Red",
+                    }, 
+                    new Sticker
+                    {
+                        StickerColor = "Green Baby",
+                    }, 
+                    new Sticker
+                    {
+                        StickerColor = "White Baby",
+                    },
                     new Description
                     {
                         Observation = "Dry",

@@ -21,5 +21,8 @@ namespace Creighton_Model_App.Models
 
         public int DescriptionId { get; set; }
 
+        public Sticker sticker { get; set; }
+
+        public Description description { get; set; }
     }
 }
