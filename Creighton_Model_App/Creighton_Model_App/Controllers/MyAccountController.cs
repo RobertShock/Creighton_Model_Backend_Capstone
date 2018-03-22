@@ -24,7 +24,7 @@ namespace Creighton_Model_App.Controllers
 
         public async Task<IActionResult> Index()
         {
-            ViewData["DescriptionId"] = new SelectList(_context.Descriptions, "DescriptionId", "Observation");
+            ViewData["DescriptionId"] = new SelectList(_context.Descriptions.OrderBy(description => description.Observation), "DescriptionId", "Observation");
             ViewData["StickerId"] = new SelectList(_context.Stickers, "StickerId", "StickerColor");
             var user = await _userManager.GetUserAsync(User);
             return View();
