@@ -101,8 +101,44 @@ namespace Creighton_Model_App.Controllers
             return View(chartEntry);
         }
 
+        // GET: Continent/Delete/5
+        public async Task<IActionResult> Delete(int id)
+        {
+            ViewData["DescriptionId"] = new SelectList(_context.Descriptions.OrderBy(description => description.Observation), "DescriptionId", "Observation");
+            ViewData["StickerId"] = new SelectList(_context.Stickers, "StickerId", "StickerColor");
+       
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var entries = await _context.ChartEnteries.SingleOrDefaultAsync(a => a.ChartEntryId == id);
+            if (entries == null)
+            {
+                return NotFound();
+            }
+            return View(entries);
+        }
+
+        // POST: Continent/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var entries = await _context.ChartEnteries.SingleOrDefaultAsync(a => a.ChartEntryId == id);
+            _context.ChartEnteries.Remove(entries);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        private bool ChartEntryExists(int id)
+        {
+            return _context.ChartEnteries.Any(e => e.ChartEntryId == id);
+        }
     }
 }
+ 
 
 
 
